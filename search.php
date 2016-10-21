@@ -29,8 +29,7 @@
         <div id="feature">
           <?php 
             foreach ($feature as $key => $value) {?>
-              <input type="checkbox" name="feature" value="<?php echo $key?>" /><?php echo $value?> <br />
-              
+              <input type="checkbox" name="check_list[]" value="<?php echo $key?>" /><?php echo $value?> <br />
             <?php
             }?>
 
@@ -44,20 +43,38 @@
 
     <hr style="border-top: dotted 1px;">
     <div id="result" class="container">
+    <table>
       <?php
       if (isset($_POST["search"])){
         $where['SUBURB'] = $_POST["search"];
         if($_POST["type"] != -1){
           $where['TYPE_ID'] = $_POST["type"];    
         }
-        var_dump($where);
-
-        print_r($property->find([$where]));
-            
+/*        if(!empty($_POST['check_list'])) {
+          foreach($_POST['check_list'] as $check) {
+                  echo $check; 
+          }
+        }*/
+        $res = $property->find([$where]);
+          for ($i = 0; $i<$res->rowCount(); $i++)
+          {
+            $propRow = $res->getNext(new Property($database->get_conn()), $i++);?>
+            <tr>
+              <td><?php echo $propRow->ID;?></td>
+              <td><?php echo $propRow->STREET;?></td>
+              <td><?php echo $propRow->SUBURB;?></td>
+              <td><?php echo $propRow->STATE;?></td>
+              <td><?php echo $propRow->POSTCODE;?></td>
+              <td><?php echo $propRow->TYPE_ID;?></td>
+            </tr>
+<?php
+          }
         }
+
         else {
             echo "<p>No properties are found in database. </P>";
         }
       
       ?>
+      </table>
     </div>
