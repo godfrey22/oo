@@ -17,6 +17,10 @@ if(theForm.search.value === "")
 
   <?php
   include "common/navigation.html";
+  include('controller/SearchController.php');
+  $search = new SearchController($database->get_conn());
+  $type = $search->getType();
+  $feature = $search->getFeature();
   ?>
 
   <div id= "search" class="container">

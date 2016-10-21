@@ -19,7 +19,7 @@ class Property_Feature
         $result = oci_fetch_assoc($parse);
         if($result)
         {
-            $this->FEATURE_ID = $result['feature_id'];
+            $this->FEATURE_ID = $result['FEATURE_ID'];
             $this->NAME = $result['NAME'];
             return $result;
         }
