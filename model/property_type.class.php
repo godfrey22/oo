@@ -1,7 +1,7 @@
 <?php
 class Property_Type
 {
-	public $FEATURE_ID;
+	public $TYPE_ID;
 	public $NAME;
 	private $_conn;
 
@@ -19,7 +19,7 @@ class Property_Type
         $result = oci_fetch_assoc($parse);
         if($result)
         {
-            $this->FEATURE_ID = $result['ID'];
+            $this->TYPE_ID = $result['ID'];
             $this->NAME = $result['NAME'];
             return $result;
         }
