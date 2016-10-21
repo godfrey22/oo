@@ -35,17 +35,12 @@ if(theForm.search.value === "")
           <p>Property Type:</p>
           <select class="selectpicker" name="type">
             <option value="-1">All</option>
+            <?php 
+              foreach ($type as $key => $value) {?>
+                <option value="<?php echo $key ?>"><?php echo $value ?></option>
               <?php
-                $query="SELECT * FROM PROPERTY_TYPE";
-                $stmt = oci_parse($conn, $query);
-                oci_execute($stmt); 
-                while(oci_fetch($stmt)){?>
-                  <option value=<?php echo oci_result($stmt, 1) ?>>
-                    <?php echo oci_result($stmt, 2) ?>
-                  </option>
-                <?php
-                  }
-                ?>
+              }
+            ?>
           </select>
         </div>
           <div id="search_btn" class="col-lg-2 col-md-4" >
