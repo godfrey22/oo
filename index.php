@@ -1,8 +1,8 @@
 <?php
-	include('database.class.php');
-	include('property.class.php');
-	include('property_feature.class.php');
-	include('property_type.class.php');
+	include('model/database.class.php');
+	include('model/property.class.php');
+	include('model/property_feature.class.php');
+	include('model/property_type.class.php');
 
 	$database = new DB();
 	$property = new Property($database->get_conn());
