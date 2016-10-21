@@ -19,10 +19,15 @@ if(theForm.search.value === "")
   include "common/navigation.html";
   include('controller/SearchController.php');
   include('model/database.class.php');
+  include('model/property.class.php');
+
+
   $database = new DB();
+  $property = new Property($database->get_conn());
   $search = new SearchController($database->get_conn());
   $type = $search->getType();
   $feature = $search->getFeature();
+  $where=array();
   ?>
 
   <div id= "search" class="container">
