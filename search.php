@@ -43,6 +43,16 @@ if(theForm.search.value === "")
             ?>
           </select>
         </div>
+        <div id="feature">
+          <?php 
+            foreach ($feature as $key => $value) {?>
+              <input type="checkbox" name="feature" value="<?php echo $key?>" /><?php echo $value?> <br />
+              
+            <?php
+            }?>
+
+
+        </div>
           <div id="search_btn" class="col-lg-2 col-md-4" >
                 <button type="submit" class="btn btn-primary">Search</button>
           </div>
