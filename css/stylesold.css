@@ -1,0 +1,29 @@
+a:hover{
+	text-decoration: none;
+}
+
+p{
+	color: white;
+}
+
+h1 { 
+	font-family: "Times New Roman", Times, serif;
+	font-size: 65px;
+} 
+.container{
+	margin-top:10px;
+}
+
+
+img + div{
+
+	background-image: url("../img/Sold.png");
+	background-repeat: no-repeat;
+	background-position:center;
+	margin-left: 5px;
+}
+
+/*#Properties{
+	background-image: url("Sold.png");
+	background-repeat: repeat-x;
+}*/

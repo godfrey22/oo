@@ -1,0 +1,21 @@
+a:hover{
+	text-decoration: none;
+}
+
+p{
+	color: white;
+}
+
+h1 { 
+	font-family: "Times New Roman", Times, serif;
+	font-size: 65px;
+	/*font-family: 'arial';*/
+	/*font-size: 100px; */
+
+} 
+.container{
+	margin-top:10px;
+}
+#search{
+	margin-top: 40px;
+}
