@@ -43,7 +43,7 @@ class Property
 
         // This array will hold the where clause
         $whereClause = array();
-
+        $where = $where[0];
         foreach($where as $key => $value)
         {
             $whereClause[] = $key . "='" . $value . "'";
