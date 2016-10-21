@@ -18,6 +18,8 @@ if(theForm.search.value === "")
   <?php
   include "common/navigation.html";
   include('controller/SearchController.php');
+  include('model/database.class.php');
+  $database = new DB();
   $search = new SearchController($database->get_conn());
   $type = $search->getType();
   $feature = $search->getFeature();
