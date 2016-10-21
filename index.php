@@ -1,10 +1,9 @@
 <?php
-	include('database.php');
+	include('database.class.php');
+	include('property.class.php');
+
 	$database = new DB();
-	if($database->connDB()){
-		echo "success";
-	}else{
-		echo "fail";
-	}
+	$property = new Property($database);
+	echo $property->find_property_by_id(182);
 ?>
 
