@@ -18,6 +18,7 @@ class Property
     {
     	$sql = 'SELECT * FROM property WHERE id =' . $id;
     	$parse = oci_parse($this->_conn, $sql);
+
         oci_execute($parse);
         $result = oci_fetch_assoc($parse);
         if($result)
