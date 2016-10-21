@@ -4,7 +4,7 @@
 
 	$database = new DB();
 	$property = new Property($database->get_conn());
-	echo $property->find_property_by_id(182);
-	
+	print_r($property->find_property_by_id(182));
+
 ?>
 

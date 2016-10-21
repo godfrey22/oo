@@ -29,7 +29,7 @@ class Property
             $this->POSTCODE = $result['POSTCODE'];
             $this->TYPE_ID = $result['TYPE_ID'];
             $this->SUBURB = $result['SUBURB'];
-            return true;
+            return $result;
         }
         else
         {
