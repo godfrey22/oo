@@ -4,7 +4,11 @@
 
 	$database = new DB();
 	$property = new Property($database->get_conn());
-	print_r($property->find_property_by_id(182));
+
+
+	$where=array();
+	$where['SUBURB']='huntingdale';
+	print_r($property->find([$where]));
 
 ?>
 
